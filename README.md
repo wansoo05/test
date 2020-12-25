@@ -46,3 +46,75 @@ boolean 한가지 밖에 없다. true나 false 중 하나를 저장할 수 있�
 * char tab = '\t'; 와 같이 tab이나 backspace 등의 특수 문자를 저장할 수 있다.
 
 # 다차원 배열
+2차원 배열의 선언방법은 타입[][] 변수이름; , 타입 변수이름[][];, 타입[] 변수이름[];이 있다(3차원 이상도 차원의 수만큼 []를 추가 해주면 된다.).첫번째[]는 열, 두번째[]는 행을 나타낸다. 따라서 테이블 형태의 데이터를 담는데 사용된다.
+
+* 다차원 배열(배열의 배열)은 가변배열이다.   
+예를 들어, int[][] score = new int[5][3];의 코드를 다음과 같이 표현 할 수 있다.
+<pre>
+<code>
+int[][] score = new int[5][];
+score[0] = new int[3];
+score[1] = new int[3];
+score[2] = new int [3];
+score[3] = new int [3];
+score[4] = new int [3];
+</pre>
+</code>
+이 원리를 이용하여 다음과같은 배열을 생성하는것도 가능하다.
+<pre>
+<code>
+int[][] score = new int[5][];
+score[0] = new int[4];
+score[1] = new int[3];
+score[2] = new int [2];
+score[3] = new int [2];
+score[4] = new int [3];
+</pre>
+</code>
+중괄호를 통해서도 생성과 초기화를 동시에 하는것이 가능하다.
+<pre>
+<code>
+int[][] score = {
+    {100, 100, 100, 100},
+    {20, 20, 20},
+    {40, 40, 40},
+    {50, 50, 50}
+};
+</pre>
+</code>
+
+아래의 코드는 다차원 배열을 이용한 마방진을 만든 예이다.
+<pre>
+<code>
+public class MagicSquareTest {
+
+	public static void main(String[] args) {
+		int[][] data = new int[5][5];
+		
+		int i=0, j=2;
+		for(int k=1;k<=Math.pow(5, 2);k++) {
+			data[i][j] = k;
+			if(k%5 == 0) {
+				i++;
+			}else {
+				i--;
+				j++;
+				 if(i<0) {
+						i=4;
+				}
+				 if(j>=5) {
+						j=0;
+				}
+			}
+		}
+		
+		for(i=0;i<data.length;i++) {
+			for(j=0;j<data[i].length;j++) {
+				System.out.printf("%2d ",data[i][j]);
+			}
+			System.out.println();
+		}
+	}
+}
+</pre>
+</code>
