@@ -50,16 +50,16 @@ boolean 한가지 밖에 없다. true나 false 중 하나를 저장할 수 있�
 
 * 다차원 배열(배열의 배열)은 가변배열이다.   
 예를 들어, int[][] score = new int[5][3];의 코드를 다음과 같이 표현 할 수 있다.
-<pre>
-<code>
+
+'''
 int[][] score = new int[5][];
 score[0] = new int[3];
 score[1] = new int[3];
 score[2] = new int [3];
 score[3] = new int [3];
 score[4] = new int [3];
-</pre>
-</code>
+'''
+
 이 원리를 이용하여 다음과같은 배열을 생성하는것도 가능하다.
 <pre>
 <code>
@@ -69,8 +69,8 @@ score[1] = new int[3];
 score[2] = new int [2];
 score[3] = new int [2];
 score[4] = new int [3];
-</pre>
 </code>
+</pre>
 중괄호를 통해서도 생성과 초기화를 동시에 하는것이 가능하다.
 <pre>
 <code>
@@ -80,10 +80,11 @@ int[][] score = {
     {40, 40, 40},
     {50, 50, 50}
 };
-</pre>
 </code>
+</pre>
 
 아래의 코드는 다차원 배열을 이용한 마방진을 만든 예이다.
+
 <pre>
 <code>
 public class MagicSquareTest {
@@ -116,5 +117,6 @@ public class MagicSquareTest {
 		}
 	}
 }
-</pre>
 </code>
+</pre>
+dfsdf
